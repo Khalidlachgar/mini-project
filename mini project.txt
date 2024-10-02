@@ -1,0 +1,136 @@
+#include <stdio.h>
+#define MAX_LIVRES 100
+#define MAX_TITRE 100
+#define MAX_AUTEUR 100
+
+char auteur[MAX_AUTEUR];
+char titre [MAX_TITRE] ;
+int stock;
+float prix;
+int i;
+
+ 
+    int nombreslivres = 0;
+   
+void ajouterLivre() {
+    if (nombreslivres >= MAX_LIVRES) {
+        printf("le stock est plein impossible dajouter auter livre \n");
+        return;
+    }
+   
+   
+    printf ("Auteur du livre:");
+     scanf ("%[^\n]",auteur[i]);
+     printf ("\n");
+    printf ("Titre du livre:");
+    scanf ("%[^\n]",titre[i]);
+    printf ("\n");
+    printf ("Prix du livre:");
+    scanf ("%f",&prix);
+    printf ("\n");
+    printf ("Quantité en stock:");
+    scanf ("%d",&stock);
+    printf ("\n");
+   
+   
+   nombreslivres++;
+    printf("livre est ajoute  \n");
+ }
+ void afficherleslivres(){
+     if (nombreslivres==0){
+         printf ("n'est pas des livres ");
+         return ;
+         
+         printf ("les livres disponible est ");
+         for (int i=0;i<nombreslivres;i++){
+             printf("titre : %s,titre");
+              printf ("auteur : %s,aiteur");
+            printf ("Prix : %.2f, prix");
+            printf ("stock : %d\n,stock");
+     
+             
+         }
+     }
+ }
+   
+   void rechercherlivre() {
+     
+     if ( nombreslivres == 0) {    
+                  printf("livre non trouve \n");
+         return;
+        }
+     
+    printf(" le livre dispo est  : ");
+     for (int i = 0; i < nombreslivres; i++) {
+   
+     printf("titre : %s,titre");
+     printf ("auteur : %s,aiteur");
+     printf ("Prix : %.2f, prix");
+     printf ("stock : %d\n,stock");
+     
+
+ }
+
+  }
+  void mettreajourquantite(){
+      char titre ;
+      int i;
+      printf ("mettre a Jour la quantite d'un livre ");
+      scanf ("%s",&titre);
+       for (i=0;i<nombreslivres;i++){
+           if ( titre == 0){
+               printf ("la quantité en stock pour un livre %d,la novelle quantite est :",stock);
+               scanf ("%d",&stock);
+               printf ("quantite mise a jour");
+               return ;
+           }
+       }
+      void (SupprimerLivreStock){
+          char titre;
+          printf ("entre le titre supprimer dans le stock");
+          scanf ("%s",&titre);
+          for (int i=0;i<nombreslivres;i++){
+              if (titre==0)
+          }
+   
+   }
+     void affichelivre(){
+         if (nombreslivres == 0) {
+        printf("nest a pas de livre\n");
+           return;
+    }
+
+    printf("les livres disponible sont:  \n");
+    for (int i =0; i< nombreslivres; i++) {
+        printf("titre : %s,titre");
+     printf ("auteur : %s,aiteur");
+     printf ("Prix : %.2f, prix");
+     printf ("stock : %d\n,stock");
+    }
+     }
+    printf("Livre non trouve \n");
+int main() {
+    int leschoix;
+    printf ("1.Ajouter un livre au stock \n");
+    printf ("2.Afficher tous les livres disponibles\n");
+    printf ("3.Rechercher un livre par son titre\n");
+    printf ("4.mettre à jour la quantité d'un livre\n");
+    printf ("5.Supprimer un livre du stock\n");
+    printf ("6.Afficher le nombre total de livres en stock\n");
+    printf ("7.le stock\n");
+   
+    printf ("le choix qui obtune est :");
+    scanf ("%d",&leschoix);
+   
+    switch (leschoix){
+        case 1 :ajouterLivre();break;
+        case 2 : rechercherlivre();break;
+        case 3 :afficherleslivres();break;
+        case 4 :mettreajourquantite();break; 
+        case 5 :affichelivre();break;
+        default: printf("Choix invalide\n");
+    }
+   
+
+    return 0;
+}
